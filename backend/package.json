@@ -1,7 +1,7 @@
 {
   "name": "unified-fullstack-backend",
   "version": "1.0.0",
-  "description": "Unified backend that uses PostgreSQL, MongoDB, Redis caching and runs as replicated Express service behind Nginx/HAProxy.",
+  "description": "Unified backend that uses PostgreSQL, MongoDB, Redis caching and runs as replicated Express service behind Nginx.",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
@@ -14,7 +14,6 @@
     "mongodb",
     "redis",
     "nginx",
-    "haproxy",
     "docker"
   ],
   "author": "student",

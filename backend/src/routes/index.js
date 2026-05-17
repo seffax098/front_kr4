@@ -30,7 +30,7 @@ router.get('/status', (req, res) => {
       usersTtlSeconds: config.usersCacheTtlSeconds,
       productsTtlSeconds: config.productsCacheTtlSeconds
     },
-    technologies: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB', 'Redis', 'Nginx', 'HAProxy', 'Docker Compose']
+    technologies: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB', 'Redis', 'Nginx', 'Docker Compose']
   });
 });
 

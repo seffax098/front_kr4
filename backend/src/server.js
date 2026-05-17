@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
     server: config.serverId,
     ui: '/ui/',
     api: '/api',
-    technologies: ['PostgreSQL', 'MongoDB', 'Redis', 'Nginx/HAProxy load balancing', 'Docker Compose']
+    technologies: ['PostgreSQL', 'MongoDB', 'Redis', 'Nginx load balancing', 'Docker Compose']
   });
 });
 

@@ -17,24 +17,6 @@ services:
     networks:
       - app-network
 
-  haproxy:
-    image: haproxy:2.9-alpine
-    container_name: unified-haproxy
-    ports:
-      - "8080:80"
-      - "8404:8404"
-    volumes:
-      - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
-    depends_on:
-      backend1:
-        condition: service_healthy
-      backend2:
-        condition: service_healthy
-      backend3:
-        condition: service_healthy
-    networks:
-      - app-network
-
   backend1:
     build: ./backend
     container_name: unified-backend-1

@@ -4,6 +4,11 @@ function print(data) {
   output.textContent = JSON.stringify(data, null, 2);
 }
 
+function on(selector, eventName, handler) {
+  const element = document.querySelector(selector);
+  if (element) element.addEventListener(eventName, handler);
+}
+
 async function request(path, options = {}) {
   const response = await fetch(path, {
     headers: {
@@ -16,12 +21,10 @@ async function request(path, options = {}) {
   print({ status: response.status, body });
 }
 
-document.querySelector('#btn-root').addEventListener('click', () => request('/'));
-document.querySelector('#btn-status').addEventListener('click', () => request('/api/status'));
-document.querySelector('#btn-products').addEventListener('click', () => request('/api/products'));
-document.querySelector('#btn-users').addEventListener('click', () => request('/api/users'));
+on('#btn-products', 'click', () => request('/api/products'));
+on('#btn-users', 'click', () => request('/api/users'));
 
-document.querySelector('#user-form').addEventListener('submit', async (event) => {
+on('#user-form', 'submit', async (event) => {
   event.preventDefault();
   const form = new FormData(event.currentTarget);
   await request('/api/users', {
@@ -39,7 +42,7 @@ document.querySelector('#user-form').addEventListener('submit', async (event) =>
   });
 });
 
-document.querySelector('#product-form').addEventListener('submit', async (event) => {
+on('#product-form', 'submit', async (event) => {
   event.preventDefault();
   const form = new FormData(event.currentTarget);
   await request('/api/products', {
