@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unified Fullstack Platform</title>
+  <link rel="stylesheet" href="/ui/styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <p class="eyebrow">Один проект для практик 19-24</p>
+      <h1>Unified Fullstack Platform</h1>
+      <p>
+        Node.js API работает в нескольких контейнерах, Nginx и HAProxy балансируют запросы,
+        PostgreSQL хранит основную структуру данных, MongoDB хранит гибкие документы,
+        Redis кэширует частые GET-запросы.
+      </p>
+      <div class="actions">
+        <button id="btn-root">Проверить балансировку /</button>
+        <button id="btn-status">Статус API</button>
+        <button id="btn-products">Получить товары</button>
+        <button id="btn-users">Получить пользователей</button>
+      </div>
+    </section>
+
+    <section class="grid">
+      <form id="user-form" class="card">
+        <h2>Создать пользователя</h2>
+        <label>Имя <input name="first_name" value="Иван" required></label>
+        <label>Фамилия <input name="last_name" value="Иванов" required></label>
+        <label>Возраст <input name="age" type="number" min="0" value="22" required></label>
+        <label>Email профиля <input name="email" value="ivan@example.com"></label>
+        <label>Интересы <input name="interests" value="docker, redis, postgres"></label>
+        <button type="submit">POST /api/users</button>
+      </form>
+
+      <form id="product-form" class="card">
+        <h2>Создать товар</h2>
+        <label>Название <input name="name" value="Монитор" required></label>
+        <label>Цена <input name="price" type="number" min="0" step="0.01" value="18500" required></label>
+        <label>Описание <input name="description" value="27-дюймовый монитор"></label>
+        <label>Теги <input name="tags" value="office, display"></label>
+        <button type="submit">POST /api/products</button>
+      </form>
+    </section>
+
+    <section class="card output-card">
+      <h2>Ответ сервера</h2>
+      <pre id="output">Нажмите любую кнопку, чтобы выполнить запрос.</pre>
+    </section>
+  </main>
+
+  <script src="/ui/app.js"></script>
+</body>
+</html>
